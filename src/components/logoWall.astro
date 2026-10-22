@@ -1,0 +1,68 @@
+---
+const technologies = [
+  { slug: "react", label: "React & React Native" },
+  { slug: "typeScript", label: "TypeScript" },
+  { slug: "javaScript", label: "JavaScript" },
+  { slug: "python", label: "Python" },
+  { slug: "cpp", label: "C++" },
+  { slug: "firebase", label: "Firebase Firestore" },
+  { slug: "supabase", label: "Supabase" },
+  { slug: "tailwindcss", label: "Tailwind CSS" },
+  { slug: "HTML5", label: "HTML5" },
+  { slug: "CSS3", label: "CSS3" },
+  { slug: "wordpress", label: "WordPress" },
+  { slug: "figma", label: "Figma" },
+  { slug: "git", label: "Git & GitHub" },
+  { slug: "mysql", label: "MySQL" },
+  { slug: "nodejs", label: "Node.js" },
+  { slug: "vercel", label: "Vercel" },
+];
+---
+
+<div class="relative overflow-x-hidden py-8">
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-36 bg-gradient-to-r from-[var(--background)] to-transparent z-20"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-36 bg-gradient-to-l from-[var(--background)] to-transparent z-20"></div>
+
+  <div class="flex animate-scroll w-max will-change-transform">
+    {
+      [...technologies, ...technologies].map((tech, index) => (
+        <div 
+          class="flex items-center gap-3 pr-10 md:pr-16 group transition-all duration-300"
+          aria-hidden={index >= technologies.length ? "true" : "false"}
+        >
+          <div class="p-2 rounded-xl bg-[#ffffff08] border border-[#ffffff10] group-hover:border-[var(--sec)] group-hover:bg-[#ffffff12] transition-colors">
+            <img
+              src={`/svg/${tech.slug}.svg`}
+              alt={tech.label}
+              class="h-6 w-6 object-contain transition-transform duration-300 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+              width="24"
+              height="24"
+              loading={index < technologies.length ? "eager" : "lazy"}
+              decoding="async"
+            />
+          </div>
+          <span class="text-sm md:text-base font-medium text-[var(--white-icon)] whitespace-nowrap group-hover:text-white transition-colors">
+            {tech.label}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style is:global>
+  @keyframes scroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .animate-scroll {
+    animation: scroll 45s linear infinite;
+  }
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>

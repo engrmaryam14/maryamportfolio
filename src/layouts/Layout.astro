@@ -1,0 +1,127 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = "Maryam Naz" } = Astro.props;
+const pageTitle = `${title} | Software Engineer & Web Developer`;
+const description =
+  "Maryam Naz - Software Engineering student and Junior Web Developer building responsive websites, cloud-based systems, and AI-assisted workflows.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <link
+      rel="preload"
+      href="/fonts/montserrat-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <meta property="og:title" content="Maryam Naz | Software Engineer & Web Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Maryam Naz, Software Engineering student and Junior Web Developer specializing in responsive web applications, cloud backends, and AI-assisted workflows."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Maryam Naz Portfolio" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Maryam Naz",
+        "alternateName": "Maryam Naz Chaudhary",
+        "url": "https://maryamnaz.dev",
+        "jobTitle": "Software Engineer & Web Developer",
+        "email": "mailto:chaudharymaryam346@gmail.com",
+        "telephone": "+923325680756",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kotli",
+          "addressRegion": "Azad Kashmir",
+          "addressCountry": "Pakistan"
+        },
+        "alumniOf": "University of Kotli, AJK",
+        "description": "Software Engineering student and Junior Web Developer who builds responsive websites and web applications, from clean front ends to cloud-based systems."
+      }
+    </script>
+  </head>
+  <body class="bg-[--background] sm:px-28 lg:px-20 px-6 antialiased selection:bg-[--sec] selection:text-black">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Montserrat Variable";
+    src: url("/fonts/montserrat-latin-wght-normal.woff2")
+      format("woff2-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --background: #0d0d0f;
+    --container: #141418;
+    --sec: #a476ff;
+    --sec-bright: #c09eff;
+    --sec-glow: rgba(164, 118, 255, 0.25);
+    --white: #ededed;
+    --white-icon: #a6a6b3;
+    --white-icon-tr: #ffffff14;
+    --line: #ffffff18;
+    --component-bg: rgba(18, 18, 24, 0.85);
+  }
+
+  * {
+    font-family:
+      "Montserrat Variable",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d0d0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #23232b;
+    border-radius: 9999px;
+    border: 2px solid #0d0d0f;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--sec);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #23232b #0d0d0f;
+  }
+</style>
