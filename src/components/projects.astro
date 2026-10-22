@@ -15,7 +15,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Organization Finance Management System",
-    category: "Final Year Project • Cross-Platform Web & Mobile",
+    category: "Final Year Project • Web & Mobile",
     description:
       "Finance platform for organizations built as both a web app and a React Native mobile app from a single Expo/React Native Web codebase, sharing one Firebase Firestore backend for real-time data.",
     image: "/projects/finance-system.svg",
@@ -24,9 +24,9 @@ const projects: Project[] = [
       "Single shared codebase for web and mobile",
       "Real-time expense and income tracking with Firestore",
       "Role-based secure authentication & authorization",
-      "Interactive analytics dashboard & cross-platform financial reporting",
+      "Interactive analytics dashboard & cross-platform reporting",
     ],
-    link: "https://github.com",
+    link: "https://github.com/engrmaryam14/maryamportfolio",
     preview: "#projects",
     status: "Final Year Project",
     badgeColor: "bg-[#a476ff]/20 text-[var(--sec-bright)] border-[#a476ff]/30",
@@ -44,7 +44,7 @@ const projects: Project[] = [
       "Fully responsive, mobile-first customer browsing experience",
       "Fast load times, instant search, and intuitive category navigation",
     ],
-    link: "https://github.com",
+    link: "https://github.com/engrmaryam14/maryamportfolio",
     preview: "#projects",
     status: "Deployed & Active",
     badgeColor: "bg-[#00d2ff]/20 text-[#00d2ff] border-[#00d2ff]/30",
@@ -62,7 +62,7 @@ const projects: Project[] = [
       "Fully responsive layout optimized across mobile, tablet, and desktop",
       "Automated SEO optimization and structured schema markup",
     ],
-    link: "https://github.com",
+    link: "https://github.com/engrmaryam14/maryamportfolio",
     preview: "#home",
     status: "Live & Deployed",
     badgeColor: "bg-[#34d399]/20 text-[#34d399] border-[#34d399]/30",
@@ -72,13 +72,13 @@ const projects: Project[] = [
 
 <section
   id="projects"
-  class="py-14 border-t border-[#ffffff10] text-[var(--white)]"
+  class="py-12 sm:py-16 border-t border-[#ffffff10] text-[var(--white)] w-full"
 >
-  <div class="max-w-5xl mx-auto space-y-8">
+  <div class="space-y-6 sm:space-y-8">
     <div>
-      <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec font-medium">Selected Works</h2>
-      <h3 class="text-4xl md:text-5xl font-semibold tracking-tight">Featured Projects</h3>
-      <p class="text-[var(--white-icon)] text-base md:text-lg max-w-2xl mt-2">
+      <h2 class="text-base sm:text-lg text-[var(--sec)] mb-1.5 shiny-sec font-medium">Selected Works</h2>
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">Featured Projects</h3>
+      <p class="text-[var(--white-icon)] text-sm sm:text-base md:text-lg max-w-2xl mt-1.5 sm:mt-2">
         A showcase of cross-platform applications, cloud systems, and responsive web experiences built with modern engineering practices.
       </p>
     </div>
@@ -96,17 +96,17 @@ const projects: Project[] = [
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <span class={`absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full border backdrop-blur-md ${project.badgeColor || 'bg-[#ffffff15] text-white border-[#ffffff20]'}`}>
+                <span class={`absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-[11px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border backdrop-blur-md ${project.badgeColor || 'bg-[#ffffff15] text-white border-[#ffffff20]'}`}>
                   {project.status}
                 </span>
               </div>
 
               <!-- Content Body -->
-              <div class="p-5 space-y-3">
-                <span class="text-xs uppercase tracking-wider text-[var(--sec-bright)] font-semibold block">
+              <div class="p-4 sm:p-5 space-y-2.5 sm:space-y-3">
+                <span class="text-[11px] sm:text-xs uppercase tracking-wider text-[var(--sec-bright)] font-semibold block">
                   {project.category}
                 </span>
-                <h4 class="text-xl font-bold text-white group-hover:text-[var(--sec-bright)] transition-colors leading-snug">
+                <h4 class="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--sec-bright)] transition-colors leading-snug">
                   {project.title}
                 </h4>
                 <p class="text-xs text-[var(--white-icon)] leading-relaxed">
@@ -120,7 +120,7 @@ const projects: Project[] = [
                     {
                       project.features.map((feat) => (
                         <li class="flex items-start gap-1.5">
-                          <span class="text-[var(--sec)] leading-tight">•</span>
+                          <span class="text-[var(--sec)] leading-tight flex-shrink-0">•</span>
                           <span class="leading-tight">{feat}</span>
                         </li>
                       ))
@@ -131,24 +131,24 @@ const projects: Project[] = [
             </div>
 
             <!-- Footer Tech Tags & Links -->
-            <div class="p-5 pt-0 space-y-3 mt-auto">
+            <div class="p-4 sm:p-5 pt-0 space-y-3 mt-auto">
               <div class="flex flex-wrap gap-1.5 pt-2 border-t border-[#ffffff0a]">
                 {
                   project.tags.map((tag) => (
-                    <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-[#ffffff08] border border-[#ffffff10] text-[var(--white-icon)]">
+                    <span class="text-[10px] sm:text-[11px] font-medium px-2 py-0.5 rounded bg-[#ffffff08] border border-[#ffffff10] text-[var(--white-icon)]">
                       {tag}
                     </span>
                   ))
                 }
               </div>
 
-              <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center justify-between pt-1 sm:pt-2">
                 <a
                   href={project.preview}
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-[var(--sec-bright)] transition-colors"
                 >
                   <span>View Details</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 </a>
                 <a
                   href={project.link}
@@ -157,7 +157,7 @@ const projects: Project[] = [
                   aria-label={`GitHub repository for ${project.title}`}
                   class="p-2 rounded-lg bg-[#ffffff0a] border border-[#ffffff10] text-[var(--white-icon)] hover:text-white hover:bg-[#ffffff15] transition-all"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>
                 </a>
               </div>
             </div>
@@ -170,16 +170,16 @@ const projects: Project[] = [
     <a
       target="_blank"
       rel="noopener noreferrer"
-      href="https://github.com"
+      href="https://github.com/engrmaryam14"
       aria-label="GitHub Profile"
-      class="w-full flex items-center justify-center gap-2 mt-8 text-[var(--white-icon)] hover:text-white transition-all duration-300 border border-[var(--white-icon-tr)] p-3.5 rounded-2xl bg-[#141418] hover:bg-[#1a1a22] hover:border-[#ffffff20]"
+      class="w-full flex items-center justify-center gap-2 mt-6 sm:mt-8 text-[var(--white-icon)] hover:text-white transition-all duration-300 border border-[var(--white-icon-tr)] p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#141418] hover:bg-[#1a1a22] hover:border-[#ffffff20]"
     >
-      <span class="text-sm md:text-base font-medium">View more code repositories on</span>
+      <span class="text-xs sm:text-sm md:text-base font-medium">View more code repositories on GitHub</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        class="size-5"
+        class="size-4 sm:size-5"
       >
         <path
           d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"

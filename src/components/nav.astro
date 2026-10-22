@@ -9,22 +9,22 @@ const navItems: NavItem[] = [
   {
     label: "Home",
     href: "#home",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
   },
   {
     label: "Experience",
     href: "#experience",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
   },
   {
     label: "Projects",
     href: "#projects",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
   },
   {
     label: "Contact",
     href: "#contact",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
   },
 ];
 ---
@@ -32,23 +32,23 @@ const navItems: NavItem[] = [
 <div class="flex justify-center w-full">
   <nav
     id="main-nav"
-    class="fixed left-1/2 -translate-x-1/2 z-[100] bg-[var(--background)]/90 border border-[#ffffff15] backdrop-blur-xl transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[92%] sm:w-[80%] md:w-auto md:min-w-[460px] rounded-full shadow-2xl"
+    class="fixed left-1/2 -translate-x-1/2 z-[100] bg-[var(--background)]/90 border border-[#ffffff15] backdrop-blur-xl transition-all duration-300 ease-in-out md:top-6 md:bottom-auto bottom-0 w-full md:w-auto md:min-w-[440px] md:rounded-full shadow-2xl"
   >
-    <div class="container mx-auto flex justify-center items-center px-6 py-3">
+    <div class="w-full flex justify-center items-center px-4 sm:px-6 py-2.5 sm:py-3 pb-[calc(0.6rem+env(safe-area-inset-bottom,0px))] md:pb-3">
       <ul
-        class="flex w-full justify-between md:space-x-8 md:justify-center gap-4 sm:gap-6"
+        class="flex w-full justify-around md:justify-center md:space-x-6 gap-1 sm:gap-4"
       >
         {
           navItems.map((item) => (
-            <li class="flex-1 md:flex-none">
+            <li class="flex-1 md:flex-none text-center">
               <a
                 href={item.href}
-                class="flex flex-col md:flex-row items-center gap-1.5 md:gap-2 text-[var(--white-icon)] hover:text-white transition-colors text-xs md:text-sm font-medium relative group py-1 px-2 rounded-lg"
+                class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 text-[var(--white-icon)] hover:text-white transition-colors text-[11px] sm:text-xs md:text-sm font-medium relative group py-1 px-1.5 sm:px-2.5 rounded-lg"
               >
-                <span class="flex items-center justify-center size-5">
+                <span class="flex items-center justify-center size-4 sm:size-5">
                   <fragment set:html={item.icon} />
                 </span>
-                <span>{item.label}</span>
+                <span class="truncate">{item.label}</span>
               </a>
             </li>
           ))
@@ -61,23 +61,18 @@ const navItems: NavItem[] = [
 <style>
   nav {
     transform: translateX(-50%);
-    background-color: rgba(13, 13, 15, 0.88);
-    transition:
-      background-color 0.3s ease,
-      border-radius 0.3s ease,
-      border-color 0.3s ease,
-      width 0.3s ease;
+    background-color: rgba(13, 13, 15, 0.92);
   }
 
   nav.scrolling {
-    background-color: rgba(18, 18, 24, 0.95);
-    border-color: rgba(164, 118, 255, 0.25);
+    background-color: rgba(18, 18, 24, 0.96);
+    border-color: rgba(164, 118, 255, 0.3);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
   }
 
   nav a.active {
     color: #ffffff !important;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   @media (max-width: 767px) {
@@ -92,7 +87,7 @@ const navItems: NavItem[] = [
     }
 
     body {
-      padding-bottom: 75px;
+      padding-bottom: 80px;
     }
   }
 </style>
@@ -129,7 +124,7 @@ const navItems: NavItem[] = [
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.3 };
+    const observerOptions = { threshold: 0.25 };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {

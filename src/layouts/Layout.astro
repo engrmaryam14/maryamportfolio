@@ -10,12 +10,12 @@ const description =
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <link
@@ -41,7 +41,7 @@ const description =
         "@type": "Person",
         "name": "Maryam Naz",
         "alternateName": "Maryam Naz Chaudhary",
-        "url": "https://maryamnaz.dev",
+        "url": "https://github.com/engrmaryam14/maryamportfolio",
         "jobTitle": "Software Engineer & Web Developer",
         "email": "mailto:chaudharymaryam346@gmail.com",
         "telephone": "+923325680756",
@@ -56,8 +56,10 @@ const description =
       }
     </script>
   </head>
-  <body class="bg-[--background] sm:px-28 lg:px-20 px-6 antialiased selection:bg-[--sec] selection:text-black">
-    <slot />
+  <body class="bg-[--background] text-[var(--white)] overflow-x-hidden min-h-screen px-4 sm:px-8 md:px-12 lg:px-16 antialiased selection:bg-[--sec] selection:text-black">
+    <div class="max-w-6xl mx-auto w-full">
+      <slot />
+    </div>
   </body>
 </html>
 
@@ -97,13 +99,14 @@ const description =
     margin: 0;
   }
 
-  html {
-    scroll-behavior: smooth;
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   /* Scrollbar styles */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -113,7 +116,6 @@ const description =
   ::-webkit-scrollbar-thumb {
     background: #23232b;
     border-radius: 9999px;
-    border: 2px solid #0d0d0f;
   }
 
   ::-webkit-scrollbar-thumb:hover {
